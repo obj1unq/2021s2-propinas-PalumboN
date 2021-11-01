@@ -7,6 +7,16 @@ class Cliente {
 
 }
 
+class ClienteEfectivo inherits Cliente {
+	const plataEnBolsillo
+	
+	method leAlcanzaPara(valorPlato) = self.costoTotal(valorPlato) <= plataEnBolsillo
+}
+
+class ClienteTarjeta inherits Cliente {
+	method leAlcanzaPara(valorPlato) = true
+}
+
 
 // FORMAS DE DAR PROPINA
 object comun { 
