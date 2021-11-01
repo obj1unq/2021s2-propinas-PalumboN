@@ -1,0 +1,23 @@
+import herencia.*
+
+test "costo total de un cliente común" {
+	const cliente = new Comun(salario = 40000)
+	assert.equals(110, cliente.costoTotal(100))
+}
+
+test "costo total de un cliente comedido" {
+	const cliente = new Comedido(salario = 40000, maximoDePropina = 50)
+	assert.equals(120, cliente.costoTotal(100))
+	assert.equals(1050, cliente.costoTotal(1000))
+}
+
+test "costo total de un cliente amarrete" {
+	const cliente = new Amarrete(salario = 40000)
+	assert.equals(100, cliente.costoTotal(100))
+}
+
+test "costo total de un cliente asalariado" {
+	const cliente = new Asalariado(salario = 40000)
+	assert.equals(500, cliente.costoTotal(100))
+}
+
