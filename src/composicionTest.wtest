@@ -1,0 +1,33 @@
+import composicion.*
+
+test "costo total de un cliente común" {
+	const cliente = new Cliente(salario = 40000, formaDeDarPropina = comun)
+	assert.equals(110, cliente.costoTotal(100))
+}
+
+test "costo total de un cliente comedido" {
+	const cliente = new Cliente(
+		salario = 40000, 
+		formaDeDarPropina = new Comedido(maximoDePropina = 50)
+	)
+	assert.equals(120, cliente.costoTotal(100))
+	assert.equals(1050, cliente.costoTotal(1000))
+}
+
+test "costo total de un cliente amarrete" {
+	const cliente = new Cliente(salario = 40000, formaDeDarPropina = amarrete)
+	assert.equals(100, cliente.costoTotal(100))
+}
+
+test "costo total de un cliente asalariado" {
+	const cliente = new Cliente(salario = 40000, formaDeDarPropina = asalariado)
+	assert.equals(500, cliente.costoTotal(100))
+}
+
+
+test "un cliente cambia de propina" {
+	const cliente = new Cliente(salario = 40000, formaDeDarPropina = comun)
+	assert.equals(110, cliente.costoTotal(100))
+	cliente.formaDeDarPropina(amarrete)
+	assert.equals(100, cliente.costoTotal(100))
+}

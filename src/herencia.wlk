@@ -33,3 +33,7 @@ class Amarrete inherits Cliente {
 class Asalariado inherits Cliente {
 	override method calcularPropina(valorPlato) = 0.01 * salario
 }
+
+object abuelita {
+	var property nieto
+}

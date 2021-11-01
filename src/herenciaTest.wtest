@@ -21,3 +21,10 @@ test "costo total de un cliente asalariado" {
 	assert.equals(500, cliente.costoTotal(100))
 }
 
+// NO SE PUEDE IMPLEMENTAR
+//test "un cliente cambia de propina" {
+//	const cliente = new Comun(salario = 40000)
+//	assert.equals(110, cliente.costoTotal(100))
+//	**No puedo cambiar la clase de un objeto**
+//}
+
